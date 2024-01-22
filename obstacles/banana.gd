@@ -4,6 +4,7 @@ extends StaticBody2D
 
 func _on_area_2d_body_entered(body):
 	$Area2D2/Sprite2D.visible = true
+	$Area2D2.set_deferred("monitoring", true)
 	
 
 
