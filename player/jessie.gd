@@ -1,48 +1,38 @@
 extends CharacterBody2D
 
 
-@export var speed = 300.0
+const maxSpeed = 500.0
+const acceleration = 10
 const JUMP_VELOCITY = -400.0
-var running
-var slowing = false
+var direction
 
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
+var sliding = false
 
-func run():
-	speed = 450
-	running = true
-	
-func walk():
-	if is_on_floor():
-		speed = 300
-		running = false
 
 func slowDown():
-	slowing = true
 	$AnimationPlayer.play("recover")
-	$Sprite2D.rotation = 0
+	velocity.x = 0
 
 func slide():
-	$Sprite2D.scale.y = 0.813/2
-	$CollisionShape2D.shape.size.y = 104/2
+	sliding = true
+	scale.y = 0.5
+	if is_on_floor():
+		pass
 func stand():
-	$Sprite2D.scale.y = 0.813
-	$CollisionShape2D.shape.size.y = 104
+	sliding = false
+	scale.y = 1
 
 
 
 
 func _physics_process(delta):
 	
-	if Input.is_action_pressed("ui_shift") and is_on_floor() and slowing == false:
-		run()
-	elif slowing == false:
-		walk()
 	# Add the gravity.
 	if not is_on_floor():
 		velocity.y += gravity * delta
 		
-	if Input.is_action_just_pressed("ui_control"):
+	if Input.is_action_pressed("ui_control"):
 		slide()
 	elif Input.is_action_just_released("ui_control"):
 		stand()
@@ -53,11 +43,16 @@ func _physics_process(delta):
 
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
-	var direction = Input.get_axis("ui_a", "ui_d")
-	if direction:
-		velocity.x = direction * speed
-	else:
-		velocity.x = move_toward(velocity.x, 0, speed)
+	direction = Input.get_axis("ui_a", "ui_d")
+	if direction > 0 and sliding == false:
+		velocity.x += acceleration
+	elif direction < 0 and sliding == false:
+		velocity.x -= acceleration
+	elif is_on_floor():
+		velocity.x = lerp(velocity.x, 0.0, 0.025)
+	if sliding == false:
+		velocity.x = clamp(velocity.x, -maxSpeed, maxSpeed)
+	print(velocity.x)
 
 	move_and_slide()
 
@@ -65,4 +60,4 @@ func _physics_process(delta):
 
 
 func _on_animation_player_animation_finished(recover):
-	slowing = false
+	$Sprite2D.rotation = 0

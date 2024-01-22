@@ -9,7 +9,6 @@ func _on_area_2d_body_entered(body):
 
 
 func _on_area_2d_2_body_entered(body):
-	body.get_node("Sprite2D").rotate(180*PI/180)
 	body.slowDown()
 	$AudioStreamPlayer2D.play()
 	$Area2D2.set_deferred("monitoring", false)

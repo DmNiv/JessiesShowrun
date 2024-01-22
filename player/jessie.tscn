@@ -1,24 +1,28 @@
-[gd_scene load_steps=7 format=3 uid="uid://d12nmgwpp6l20"]
+[gd_scene load_steps=8 format=3 uid="uid://d12nmgwpp6l20"]
 
 [ext_resource type="Script" path="res://player/jessie.gd" id="1_73rc8"]
 [ext_resource type="Texture2D" uid="uid://cqy8wnp4xopt7" path="res://icon.svg" id="1_ly6dt"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_qm38l"]
-size = Vector2(52, 104)
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_rhrk8"]
+radius = 26.0
+height = 52.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_syhcs"]
+size = Vector2(52, 78)
 
 [sub_resource type="Animation" id="Animation_iv4ww"]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath(".:speed")
+tracks/0/path = NodePath("Sprite2D:rotation")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [300.0]
+"values": [0.0]
 }
 
 [sub_resource type="Animation" id="Animation_mp2os"]
@@ -27,14 +31,14 @@ length = 2.0
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath(".:speed")
+tracks/0/path = NodePath("Sprite2D:rotation")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0, 2),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [100.0, 300.0]
+"values": [-6.28319, 6.28319]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_bdpr7"]
@@ -49,7 +53,12 @@ collision_mask = 5
 script = ExtResource("1_73rc8")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("RectangleShape2D_qm38l")
+position = Vector2(0, 26)
+shape = SubResource("CapsuleShape2D_rhrk8")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
+position = Vector2(0, -13)
+shape = SubResource("RectangleShape2D_syhcs")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 scale = Vector2(0.40625, 0.8125)
