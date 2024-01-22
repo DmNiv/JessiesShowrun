@@ -22,17 +22,30 @@ func slowDown():
 	$AnimationPlayer.play("recover")
 	$Sprite2D.rotation = 0
 
+func slide():
+	$Sprite2D.scale.y = 0.813/2
+	$CollisionShape2D.shape.size.y = 104/2
+func stand():
+	$Sprite2D.scale.y = 0.813
+	$CollisionShape2D.shape.size.y = 104
+
+
+
+
 func _physics_process(delta):
 	
 	if Input.is_action_pressed("ui_shift") and is_on_floor() and slowing == false:
 		run()
 	elif slowing == false:
 		walk()
-		
-		
 	# Add the gravity.
 	if not is_on_floor():
 		velocity.y += gravity * delta
+		
+	if Input.is_action_just_pressed("ui_control"):
+		slide()
+	elif Input.is_action_just_released("ui_control"):
+		stand()
 
 	# Handle jump.
 	if Input.is_action_just_pressed("ui_accept") and is_on_floor():

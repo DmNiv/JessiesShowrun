@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://cqy8wnp4xopt7" path="res://icon.svg" id="1_ly6dt"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qm38l"]
-size = Vector2(52, 52)
+size = Vector2(52, 104)
 
 [sub_resource type="Animation" id="Animation_iv4ww"]
 length = 0.001
@@ -52,7 +52,7 @@ script = ExtResource("1_73rc8")
 shape = SubResource("RectangleShape2D_qm38l")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(0.40625, 0.40625)
+scale = Vector2(0.40625, 0.8125)
 texture = ExtResource("1_ly6dt")
 
 [node name="recover" type="Timer" parent="."]
