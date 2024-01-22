@@ -21,3 +21,5 @@ texture = ExtResource("1_ly6dt")
 [node name="recover" type="Timer" parent="."]
 wait_time = 2.0
 one_shot = true
+
+[node name="Camera2D" type="Camera2D" parent="."]
