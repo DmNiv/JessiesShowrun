@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
 
-var speed = 300.0
+@export var speed = 300.0
 const JUMP_VELOCITY = -400.0
 var running
 var slowing = false
@@ -19,11 +19,7 @@ func walk():
 
 func slowDown():
 	slowing = true
-	speed = 100
-	$recover.start()
-	await $recover.timeout
-	speed = 300
-	slowing = false
+	$AnimationPlayer.play("recover")
 	$Sprite2D.rotation = 0
 
 func _physics_process(delta):
@@ -51,3 +47,9 @@ func _physics_process(delta):
 		velocity.x = move_toward(velocity.x, 0, speed)
 
 	move_and_slide()
+
+
+
+
+func _on_animation_player_animation_finished(recover):
+	slowing = false
