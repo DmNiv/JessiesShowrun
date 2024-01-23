@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b8celdm8sybvm"
-path="res://.godot/imported/strawberrypie_2_500x500.jpg-8c7954dcfbdbde2029a2074f8e17bad9.ctex"
+uid="uid://cwxvqyoxpxjqg"
+path="res://.godot/imported/Casca de banana.png-3bbb77ab43a58a444b5a412be3c43cd6.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://obstacles/sprites/strawberrypie_2_500x500.jpg"
-dest_files=["res://.godot/imported/strawberrypie_2_500x500.jpg-8c7954dcfbdbde2029a2074f8e17bad9.ctex"]
+source_file="res://obstacles/sprites/Casca de banana.png"
+dest_files=["res://.godot/imported/Casca de banana.png-3bbb77ab43a58a444b5a412be3c43cd6.ctex"]
 
 [params]
 

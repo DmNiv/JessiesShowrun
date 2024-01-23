@@ -11,14 +11,14 @@ config_version=5
 [application]
 
 config/name="JessiesShowrun"
-run/main_scene="res://maps/world_test.tscn"
+run/main_scene="res://maps/level_1.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
 config/icon="res://icon.svg"
 
 [display]
 
-window/size/viewport_width=1080
-window/size/viewport_height=720
+window/size/viewport_width=1920
+window/size/viewport_height=1080
 
 [input]
 
@@ -58,3 +58,4 @@ ui_control={
 2d_physics/layer_1="world"
 2d_physics/layer_2="player"
 2d_physics/layer_3="obstacles"
+2d_physics/layer_4="funcObjects"

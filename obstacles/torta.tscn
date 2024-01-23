@@ -1,60 +1,64 @@
 [gd_scene load_steps=7 format=3 uid="uid://qx2hfiacjd18"]
 
-[ext_resource type="Texture2D" uid="uid://b8celdm8sybvm" path="res://obstacles/sprites/strawberrypie_2_500x500.jpg" id="1_7ejms"]
 [ext_resource type="Script" path="res://obstacles/torta.gd" id="1_j1lyo"]
+[ext_resource type="Texture2D" uid="uid://dffn650qium7" path="res://obstacles/sprites/Torta.png" id="2_deqhu"]
 [ext_resource type="AudioStream" uid="uid://b6dgqwrr8qnic" path="res://sfx/toinoinoinoin.mp3" id="3_b1a35"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_k232q"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_b4dyi"]
+radius = 13.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_5q5bp"]
+radius = 13.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ov24g"]
+size = Vector2(50, 50)
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_b4dyi"]
-radius = 13.3333
-
-[node name="torta" type="StaticBody2D"]
-scale = Vector2(1.8, 1.8)
+[node name="torta" type="Node2D"]
 script = ExtResource("1_j1lyo")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("CircleShape2D_k232q")
-
-[node name="Area2D" type="Area2D" parent="."]
-position = Vector2(-98.6667, 45.5555)
-collision_layer = 4
-collision_mask = 2
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-shape = SubResource("RectangleShape2D_ov24g")
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
 
 [node name="DampedSpringJoint2D" type="DampedSpringJoint2D" parent="."]
 rotation = -1.5708
-node_a = NodePath("..")
+node_a = NodePath("../StaticBody2D")
 node_b = NodePath("../RigidBody2D")
-length = 30.0
 stiffness = 64.0
 damping = 5.0
 
 [node name="RigidBody2D" type="RigidBody2D" parent="."]
-position = Vector2(30, 0)
+position = Vector2(61, 0)
 collision_layer = 4
-collision_mask = 2
+collision_mask = 0
 freeze = true
 
 [node name="Area2D2" type="Area2D" parent="RigidBody2D"]
 collision_layer = 4
 collision_mask = 2
 
-[node name="Sprite2D" type="Sprite2D" parent="RigidBody2D/Area2D2"]
-visible = false
-scale = Vector2(0.0533333, 0.0533334)
-texture = ExtResource("1_7ejms")
-
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D/Area2D2"]
 shape = SubResource("CircleShape2D_b4dyi")
+
+[node name="Sprite2D" type="Sprite2D" parent="RigidBody2D"]
+visible = false
+position = Vector2(0, 3)
+rotation = -3.14159
+scale = Vector2(0.0118519, 0.0118519)
+texture = ExtResource("2_deqhu")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D"]
+shape = SubResource("CircleShape2D_5q5bp")
+
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2(-116, 82)
+collision_layer = 4
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_ov24g")
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("3_b1a35")
 
-[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_entered" from="RigidBody2D/Area2D2" to="." method="_on_area_2d_2_body_entered"]
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="finished" from="AudioStreamPlayer2D" to="." method="_on_audio_stream_player_2d_finished"]

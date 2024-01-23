@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ca5contey7040"
-path="res://.godot/imported/100065-banana-prata-unidade.jpg-888f716cdfbae515539856c9748a142b.ctex"
+uid="uid://dffn650qium7"
+path="res://.godot/imported/Torta.png-d57a72068a426ccb86b98d1d56732d80.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://obstacles/sprites/100065-banana-prata-unidade.jpg"
-dest_files=["res://.godot/imported/100065-banana-prata-unidade.jpg-888f716cdfbae515539856c9748a142b.ctex"]
+source_file="res://obstacles/sprites/Torta.png"
+dest_files=["res://.godot/imported/Torta.png-d57a72068a426ccb86b98d1d56732d80.ctex"]
 
 [params]
 

@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://b4c8pmrccxkr"]
 
-[ext_resource type="Texture2D" uid="uid://ca5contey7040" path="res://obstacles/sprites/100065-banana-prata-unidade.jpg" id="1_4n78h"]
 [ext_resource type="Script" path="res://obstacles/banana.gd" id="1_vaqnv"]
+[ext_resource type="Texture2D" uid="uid://cwxvqyoxpxjqg" path="res://obstacles/sprites/Casca de banana.png" id="2_pl4hc"]
 [ext_resource type="AudioStream" uid="uid://b6dgqwrr8qnic" path="res://sfx/toinoinoinoin.mp3" id="3_km13k"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_8pjow"]
@@ -28,8 +28,9 @@ shape = SubResource("RectangleShape2D_oxon1")
 
 [node name="Sprite2D" type="Sprite2D" parent="Area2D2"]
 visible = false
-scale = Vector2(0.06, 0.06)
-texture = ExtResource("1_4n78h")
+position = Vector2(0, 5)
+scale = Vector2(0.0353333, 0.0353333)
+texture = ExtResource("2_pl4hc")
 
 [node name="Area2D" type="Area2D" parent="."]
 position = Vector2(-237, 0)

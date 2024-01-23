@@ -51,7 +51,7 @@ func _physics_process(delta):
 		
 	if Input.is_action_pressed("ui_control"):
 		slide()
-	elif Input.is_action_just_released("ui_control"):
+	elif not Input.is_action_pressed("ui_control") and is_on_floor():
 		stand()
 
 	# Handle jump.
