@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=3 uid="uid://b4c8pmrccxkr"]
 
-[ext_resource type="Texture2D" uid="uid://dm5tt8p5fyc7a" path="res://obstacles/sprites/100065-banana-prata-unidade.jpg" id="1_4n78h"]
+[ext_resource type="Texture2D" uid="uid://ca5contey7040" path="res://obstacles/sprites/100065-banana-prata-unidade.jpg" id="1_4n78h"]
 [ext_resource type="Script" path="res://obstacles/banana.gd" id="1_vaqnv"]
 [ext_resource type="AudioStream" uid="uid://b6dgqwrr8qnic" path="res://sfx/toinoinoinoin.mp3" id="3_km13k"]
 
@@ -32,7 +32,7 @@ scale = Vector2(0.06, 0.06)
 texture = ExtResource("1_4n78h")
 
 [node name="Area2D" type="Area2D" parent="."]
-position = Vector2(-149, 0)
+position = Vector2(-237, 0)
 collision_layer = 4
 collision_mask = 2
 

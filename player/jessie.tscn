@@ -1,14 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://d12nmgwpp6l20"]
+[gd_scene load_steps=9 format=3 uid="uid://d12nmgwpp6l20"]
 
 [ext_resource type="Script" path="res://player/jessie.gd" id="1_73rc8"]
 [ext_resource type="Texture2D" uid="uid://cqy8wnp4xopt7" path="res://icon.svg" id="1_ly6dt"]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_rhrk8"]
-radius = 26.0
-height = 52.0
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_syhcs"]
-size = Vector2(52, 78)
+[sub_resource type="LabelSettings" id="LabelSettings_h0o6p"]
+font_size = 36
 
 [sub_resource type="Animation" id="Animation_iv4ww"]
 length = 0.001
@@ -47,21 +43,28 @@ _data = {
 "recover": SubResource("Animation_mp2os")
 }
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_rhrk8"]
+radius = 26.0
+height = 52.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_syhcs"]
+size = Vector2(52, 78)
+
 [node name="Jessie" type="CharacterBody2D"]
 collision_layer = 2
 collision_mask = 5
 script = ExtResource("1_73rc8")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 26)
-shape = SubResource("CapsuleShape2D_rhrk8")
-
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
-position = Vector2(0, -13)
-shape = SubResource("RectangleShape2D_syhcs")
+[node name="Label" type="Label" parent="."]
+offset_left = -496.0
+offset_top = -318.0
+offset_right = -270.0
+offset_bottom = -268.0
+text = "Pontuação: 0"
+label_settings = SubResource("LabelSettings_h0o6p")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(0.40625, 0.8125)
+scale = Vector2(0.406, 0.814)
 texture = ExtResource("1_ly6dt")
 
 [node name="recover" type="Timer" parent="."]
@@ -74,5 +77,13 @@ one_shot = true
 libraries = {
 "": SubResource("AnimationLibrary_bdpr7")
 }
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 26)
+shape = SubResource("CapsuleShape2D_rhrk8")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
+position = Vector2(0, -13)
+shape = SubResource("RectangleShape2D_syhcs")
 
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]

@@ -3,17 +3,15 @@ extends StaticBody2D
 
 
 func _on_area_2d_body_entered(body):
-	$Area2D2/Sprite2D.visible = true
-	$Area2D2.set_deferred("monitoring", true)
-	
+	$RigidBody2D/Area2D2/Sprite2D.visible = true
+	$RigidBody2D.set_deferred("freeze", false)
 
 
 func _on_area_2d_2_body_entered(body):
-	body.hitBanana()
+	body.hitPie()
 	$AudioStreamPlayer2D.play()
-	$Area2D2.set_deferred("monitoring", false)
+	$RigidBody2D/Area2D2.set_deferred("monitoring", false)
 	visible = false
-	
 	
 
 

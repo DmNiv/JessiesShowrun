@@ -1,8 +1,9 @@
-[gd_scene load_steps=8 format=3 uid="uid://jt5rv5wwvic0"]
+[gd_scene load_steps=10 format=3 uid="uid://jt5rv5wwvic0"]
 
 [ext_resource type="Texture2D" uid="uid://cqy8wnp4xopt7" path="res://icon.svg" id="1_8hifb"]
 [ext_resource type="PackedScene" uid="uid://d12nmgwpp6l20" path="res://player/jessie.tscn" id="2_aprla"]
 [ext_resource type="PackedScene" uid="uid://b4c8pmrccxkr" path="res://obstacles/banana.tscn" id="3_fnfdv"]
+[ext_resource type="PackedScene" uid="uid://qx2hfiacjd18" path="res://obstacles/torta.tscn" id="4_rgdx3"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_176c8"]
 
@@ -13,6 +14,8 @@ size = Vector2(130, 130)
 size = Vector2(66, 66)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nb4ot"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cyicw"]
 
 [node name="worldTest" type="Node2D"]
 
@@ -27,11 +30,8 @@ shape = SubResource("RectangleShape2D_176c8")
 scale = Vector2(0.15625, 0.15625)
 texture = ExtResource("1_8hifb")
 
-[node name="Jessie" parent="." instance=ExtResource("2_aprla")]
-position = Vector2(133, 319)
-
 [node name="StaticBody2D2" type="StaticBody2D" parent="."]
-position = Vector2(302, 490)
+position = Vector2(599, 491)
 scale = Vector2(0.755399, 0.597724)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2"]
@@ -41,7 +41,7 @@ shape = SubResource("RectangleShape2D_xccx7")
 texture = ExtResource("1_8hifb")
 
 [node name="StaticBody2D3" type="StaticBody2D" parent="."]
-position = Vector2(551, 394)
+position = Vector2(916, 388)
 scale = Vector2(3.98701, 0.681518)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D3"]
@@ -52,7 +52,7 @@ scale = Vector2(0.5, 0.5)
 texture = ExtResource("1_8hifb")
 
 [node name="StaticBody2D4" type="StaticBody2D" parent="."]
-position = Vector2(911, 287)
+position = Vector2(1260, 270)
 rotation = -0.571828
 scale = Vector2(19.8234, 1.49284)
 
@@ -64,4 +64,21 @@ scale = Vector2(0.15625, 0.15625)
 texture = ExtResource("1_8hifb")
 
 [node name="banana" parent="." instance=ExtResource("3_fnfdv")]
-position = Vector2(665, 504)
+position = Vector2(378, 504)
+
+[node name="StaticBody2D5" type="StaticBody2D" parent="."]
+position = Vector2(913, 220)
+scale = Vector2(12.7673, 2.0001)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D5"]
+shape = SubResource("RectangleShape2D_cyicw")
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D5"]
+scale = Vector2(0.15625, 0.15625)
+texture = ExtResource("1_8hifb")
+
+[node name="torta" parent="." instance=ExtResource("4_rgdx3")]
+position = Vector2(995, 221)
+
+[node name="Jessie" parent="." instance=ExtResource("2_aprla")]
+position = Vector2(40, 319)

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ca5contey7040"
-path="res://.godot/imported/100065-banana-prata-unidade.jpg-888f716cdfbae515539856c9748a142b.ctex"
+uid="uid://b8celdm8sybvm"
+path="res://.godot/imported/strawberrypie_2_500x500.jpg-8c7954dcfbdbde2029a2074f8e17bad9.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://obstacles/sprites/100065-banana-prata-unidade.jpg"
-dest_files=["res://.godot/imported/100065-banana-prata-unidade.jpg-888f716cdfbae515539856c9748a142b.ctex"]
+source_file="res://obstacles/sprites/strawberrypie_2_500x500.jpg"
+dest_files=["res://.godot/imported/strawberrypie_2_500x500.jpg-8c7954dcfbdbde2029a2074f8e17bad9.ctex"]
 
 [params]
 
