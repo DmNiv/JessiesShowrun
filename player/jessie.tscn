@@ -51,16 +51,16 @@ height = 52.0
 radius = 26.0
 height = 78.0
 
-[node name="Jessie" type="CharacterBody2D"]
+[node name="Jessie" type="CharacterBody2D" groups=["player"]]
 collision_layer = 2
 collision_mask = 13
 script = ExtResource("1_73rc8")
 
 [node name="Label" type="Label" parent="."]
-offset_left = -496.0
-offset_top = -318.0
-offset_right = -270.0
-offset_bottom = -268.0
+offset_left = -289.0
+offset_top = -668.0
+offset_right = -63.0
+offset_bottom = -618.0
 text = "Pontuação: 0"
 label_settings = SubResource("LabelSettings_h0o6p")
 
@@ -71,8 +71,6 @@ texture = ExtResource("1_ly6dt")
 [node name="recover" type="Timer" parent="."]
 wait_time = 2.0
 one_shot = true
-
-[node name="Camera2D" type="Camera2D" parent="."]
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
@@ -86,5 +84,8 @@ shape = SubResource("CapsuleShape2D_rhrk8")
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
 position = Vector2(0, -13)
 shape = SubResource("CapsuleShape2D_tnu11")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(530, -268)
 
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]

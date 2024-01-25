@@ -17,6 +17,10 @@ func slowDown():
 
 func slide():
 	sliding = true
+	if velocity.x > 300:
+		velocity.x = 600
+	elif velocity.x < -300:
+		velocity.x = -600
 	$Sprite2D.scale.y = 0.813/2
 	$CollisionShape2D.scale.y = 0.5
 	$CollisionShape2D.position.y = 13

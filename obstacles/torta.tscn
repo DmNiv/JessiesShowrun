@@ -1,6 +1,7 @@
-[gd_scene load_steps=7 format=3 uid="uid://qx2hfiacjd18"]
+[gd_scene load_steps=8 format=3 uid="uid://qx2hfiacjd18"]
 
 [ext_resource type="Script" path="res://obstacles/torta.gd" id="1_j1lyo"]
+[ext_resource type="Texture2D" uid="uid://c6wvf2wkn263o" path="res://obstacles/sprites/pngwing.com (4).png" id="2_38r8u"]
 [ext_resource type="Texture2D" uid="uid://dffn650qium7" path="res://obstacles/sprites/Torta.png" id="2_deqhu"]
 [ext_resource type="AudioStream" uid="uid://b6dgqwrr8qnic" path="res://sfx/toinoinoinoin.mp3" id="3_b1a35"]
 
@@ -47,6 +48,13 @@ texture = ExtResource("2_deqhu")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D"]
 shape = SubResource("CircleShape2D_5q5bp")
+
+[node name="Sprite2D2" type="Sprite2D" parent="RigidBody2D"]
+visible = false
+position = Vector2(-35.9861, -3.49876e-05)
+rotation = 3.14159
+scale = Vector2(0.0365389, 0.0270502)
+texture = ExtResource("2_38r8u")
 
 [node name="Area2D" type="Area2D" parent="."]
 position = Vector2(-116, 82)
