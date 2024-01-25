@@ -1,9 +1,9 @@
 extends CharacterBody2D
 
 
-const maxSpeed = 500.0
+const maxSpeed = 700.0
 const acceleration = 10
-const JUMP_VELOCITY = -400.0
+const JUMP_VELOCITY = -500.0
 
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 var sliding = false
@@ -17,25 +17,19 @@ func slowDown():
 
 func slide():
 	sliding = true
-	if velocity.x > 300:
-		velocity.x = 600
-	elif velocity.x < -300:
-		velocity.x = -600
-	$Sprite2D.scale.y = 0.813/2
+	if velocity.x > 500:
+		velocity.x = 800
+	elif velocity.x < -500:
+		velocity.x = -800
+	$Sprite2D.scale.y = 1.25
 	$CollisionShape2D.scale.y = 0.5
-	$CollisionShape2D.position.y = 13
-	$CollisionShape2D2.scale.y = 0.5
-	$CollisionShape2D2.position.y = -6
 	
 	if is_on_floor():
 		pass
 func stand():
 	sliding = false
-	$Sprite2D.scale.y = 0.813
+	$Sprite2D.scale.y = 2.5
 	$CollisionShape2D.scale.y = 1
-	$CollisionShape2D.position.y = 26
-	$CollisionShape2D2.scale.y = 1
-	$CollisionShape2D2.position.y = -13
 	
 func hitBanana():
 	pontuacao += 5
@@ -46,6 +40,11 @@ func hitPie():
 
 func _process(delta):
 	$Label.text = "Pontuação: " + str(pontuacao)
+	
+	
+	
+	
+
 
 func _physics_process(delta):
 	
@@ -73,6 +72,10 @@ func _physics_process(delta):
 		velocity.x = lerp(velocity.x, 0.0, 0.025)
 	if sliding == false:
 		velocity.x = clamp(velocity.x, -maxSpeed, maxSpeed)
+		
+	if Input.is_action_just_pressed("ui_esc"):
+		get_tree().paused = true
+		$pauseMenu.show()
 
 	move_and_slide()
 

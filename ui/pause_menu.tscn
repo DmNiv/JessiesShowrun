@@ -1,0 +1,74 @@
+[gd_scene load_steps=4 format=3 uid="uid://16nga8t7ll6w"]
+
+[ext_resource type="Script" path="res://ui/pause_menu.gd" id="1_3p3kj"]
+[ext_resource type="FontFile" uid="uid://bvk1adisg10yn" path="res://fonts/Carnevalee Freakshow.ttf" id="1_quakb"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_a8hic"]
+font = ExtResource("1_quakb")
+font_size = 108
+font_color = Color(0.92549, 1, 0.72549, 1)
+
+[node name="pauseMenu" type="Control"]
+process_mode = 2
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_3p3kj")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+color = Color(0.933333, 0.635294, 0.937255, 1)
+
+[node name="unpause" type="Button" parent="."]
+layout_mode = 0
+offset_left = 640.0
+offset_top = 503.0
+offset_right = 1280.0
+offset_bottom = 656.0
+
+[node name="Label" type="Label" parent="unpause"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.513542
+anchor_top = 0.180556
+anchor_right = 0.513542
+anchor_bottom = 0.180556
+offset_left = -328.667
+offset_top = -27.625
+offset_right = 311.333
+offset_bottom = 125.375
+grow_horizontal = 2
+text = "RESUME"
+label_settings = SubResource("LabelSettings_a8hic")
+horizontal_alignment = 1
+
+[node name="quit" type="Button" parent="."]
+layout_mode = 0
+offset_left = 640.0
+offset_top = 718.0
+offset_right = 1280.0
+offset_bottom = 871.0
+
+[node name="Label" type="Label" parent="quit"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.513542
+anchor_top = 0.180556
+anchor_right = 0.513542
+anchor_bottom = 0.180556
+offset_left = -328.667
+offset_top = -27.625
+offset_right = 311.333
+offset_bottom = 125.375
+grow_horizontal = 2
+text = "quit"
+label_settings = SubResource("LabelSettings_a8hic")
+horizontal_alignment = 1
+
+[connection signal="pressed" from="unpause" to="." method="_on_unpause_pressed"]
+[connection signal="pressed" from="quit" to="." method="_on_quit_pressed"]

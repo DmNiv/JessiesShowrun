@@ -2,17 +2,17 @@
 
 [ext_resource type="Script" path="res://obstacles/torta.gd" id="1_j1lyo"]
 [ext_resource type="Texture2D" uid="uid://c6wvf2wkn263o" path="res://obstacles/sprites/pngwing.com (4).png" id="2_38r8u"]
-[ext_resource type="Texture2D" uid="uid://dffn650qium7" path="res://obstacles/sprites/Torta.png" id="2_deqhu"]
+[ext_resource type="Texture2D" uid="uid://dry610lavuj5v" path="res://obstacles/sprites/Torta 108x108.png" id="3_76r3l"]
 [ext_resource type="AudioStream" uid="uid://b6dgqwrr8qnic" path="res://sfx/toinoinoinoin.mp3" id="3_b1a35"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_b4dyi"]
-radius = 13.0
+radius = 45.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_5q5bp"]
-radius = 13.0
+radius = 45.0999
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ov24g"]
-size = Vector2(50, 50)
+size = Vector2(108, 216)
 
 [node name="torta" type="Node2D"]
 script = ExtResource("1_j1lyo")
@@ -23,11 +23,12 @@ script = ExtResource("1_j1lyo")
 rotation = -1.5708
 node_a = NodePath("../StaticBody2D")
 node_b = NodePath("../RigidBody2D")
+length = 162.0
 stiffness = 64.0
 damping = 5.0
 
 [node name="RigidBody2D" type="RigidBody2D" parent="."]
-position = Vector2(61, 0)
+position = Vector2(204, -1)
 collision_layer = 4
 collision_mask = 0
 freeze = true
@@ -39,25 +40,24 @@ collision_mask = 2
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D/Area2D2"]
 shape = SubResource("CircleShape2D_b4dyi")
 
+[node name="Sprite2D2" type="Sprite2D" parent="RigidBody2D"]
+visible = false
+position = Vector2(-119, 0)
+rotation = 3.14159
+scale = Vector2(0.143765, 0.143765)
+texture = ExtResource("2_38r8u")
+
 [node name="Sprite2D" type="Sprite2D" parent="RigidBody2D"]
 visible = false
 position = Vector2(0, 3)
 rotation = -3.14159
-scale = Vector2(0.0118519, 0.0118519)
-texture = ExtResource("2_deqhu")
+texture = ExtResource("3_76r3l")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D"]
 shape = SubResource("CircleShape2D_5q5bp")
 
-[node name="Sprite2D2" type="Sprite2D" parent="RigidBody2D"]
-visible = false
-position = Vector2(-35.9861, -3.49876e-05)
-rotation = 3.14159
-scale = Vector2(0.0365389, 0.0270502)
-texture = ExtResource("2_38r8u")
-
 [node name="Area2D" type="Area2D" parent="."]
-position = Vector2(-116, 82)
+position = Vector2(-432, 270)
 collision_layer = 4
 collision_mask = 2
 

@@ -8,6 +8,9 @@
 
 [node name="level_2" type="Node2D"]
 
+[node name="Jessie" parent="." instance=ExtResource("2_0ypx0")]
+position = Vector2(84, 54)
+
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 position = Vector2(269, 449)
 scale = Vector2(26.9769, 3.46132)
@@ -20,6 +23,3 @@ scale = Vector2(0.021, 0.021)
 texture = SubResource("CompressedTexture2D_7cl0l")
 hframes = 8
 vframes = 4
-
-[node name="Jessie" parent="." instance=ExtResource("2_0ypx0")]
-position = Vector2(84, 54)

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dffn650qium7"
-path="res://.godot/imported/Torta.png-d57a72068a426ccb86b98d1d56732d80.ctex"
+uid="uid://bp0h7nba8spsu"
+path="res://.godot/imported/Cartola 108x108.png-1bc4bf1be99132af4f4d8c03c1e0ee1b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://obstacles/sprites/Torta.png"
-dest_files=["res://.godot/imported/Torta.png-d57a72068a426ccb86b98d1d56732d80.ctex"]
+source_file="res://obstacles/sprites/Cartola 108x108.png"
+dest_files=["res://.godot/imported/Cartola 108x108.png-1bc4bf1be99132af4f4d8c03c1e0ee1b.ctex"]
 
 [params]
 
