@@ -9,11 +9,17 @@ var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 var sliding = false
 var direction
 var pontuacao = 0
+var slow = false
 
 
 func slowDown():
+	slow = true
 	#$AnimationPlayer.play("recover")
 	velocity.x = 0
+	$recover.start()
+	await $recover.timeout
+	slow = false
+	
 
 func slide():
 	sliding = true
@@ -63,9 +69,9 @@ func _physics_process(delta):
 		velocity.y = JUMP_VELOCITY
 
 	direction = Input.get_axis("ui_a", "ui_d")
-	if direction > 0 and sliding == false:
+	if direction > 0 and sliding == false and slow == false:
 		velocity.x += acceleration
-	elif direction < 0 and sliding == false:
+	elif direction < 0 and sliding == false and slow == false:
 		velocity.x -= acceleration
 	elif is_on_floor():
 		velocity.x = lerp(velocity.x, 0.0, 0.05)
