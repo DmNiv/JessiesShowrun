@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dx0rji2bdrg4i"
-path="res://.godot/imported/Bloco de lado 108x108.png-0b31f0e77a0c26893d2417ad69e69e55.ctex"
+uid="uid://dp7wtrttw4es6"
+path="res://.godot/imported/JessieSpriteIdleAnimationSheet2.png-991ea1c59777691d0a888f10f39759c6.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://obstacles/sprites/Bloco de lado 108x108.png"
-dest_files=["res://.godot/imported/Bloco de lado 108x108.png-0b31f0e77a0c26893d2417ad69e69e55.ctex"]
+source_file="res://obstacles/sprites/JessieSpriteIdleAnimationSheet2.png"
+dest_files=["res://.godot/imported/JessieSpriteIdleAnimationSheet2.png-991ea1c59777691d0a888f10f39759c6.ctex"]
 
 [params]
 

@@ -19,8 +19,13 @@ config/icon="res://obstacles/sprites/Icone 1x1.png"
 
 window/size/viewport_width=1920
 window/size/viewport_height=1080
-window/size/mode=3
 window/size/resizable=false
+<<<<<<< HEAD
+window/size/window_width_override=1080
+window/size/window_height_override=720
+=======
+window/size/borderless=true
+>>>>>>> parent of df8cf79 (SPRITES)
 window/stretch/mode="canvas_items"
 window/stretch/aspect="expand"
 
