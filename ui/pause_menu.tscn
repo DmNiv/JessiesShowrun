@@ -20,9 +20,11 @@ script = ExtResource("1_3p3kj")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 layout_mode = 0
-offset_right = 1920.0
-offset_bottom = 1080.0
-color = Color(0.933333, 0.635294, 0.937255, 1)
+offset_left = 498.0
+offset_top = 133.0
+offset_right = 1422.0
+offset_bottom = 947.0
+color = Color(0.933333, 0.635294, 0.937255, 0.690196)
 
 [node name="unpause" type="Button" parent="."]
 layout_mode = 0

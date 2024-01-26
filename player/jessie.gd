@@ -22,12 +22,12 @@ func slide():
 	elif velocity.x < -700:
 		velocity.x = -1000
 	$CollisionShape2D.scale.y = 0.5
-	
-	if is_on_floor():
-		pass
+	$CollisionShape2D2.scale.y = 0.5
+
 func stand():
 	sliding = false
 	$CollisionShape2D.scale.y = 1
+	$CollisionShape2D2.scale.y = 1
 	
 func hitBanana():
 	pontuacao += 5

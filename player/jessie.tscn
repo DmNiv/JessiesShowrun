@@ -1,7 +1,7 @@
-[gd_scene load_steps=9 format=3 uid="uid://d12nmgwpp6l20"]
+[gd_scene load_steps=10 format=3 uid="uid://d12nmgwpp6l20"]
 
 [ext_resource type="Script" path="res://player/jessie.gd" id="1_73rc8"]
-[ext_resource type="Texture2D" uid="uid://5cirwf86owog" path="res://obstacles/sprites/JessieSpriteIdleAnimationSheet.png" id="3_bwfuo"]
+[ext_resource type="Texture2D" uid="uid://jo6gu35rjeqf" path="res://obstacles/sprites/JessieSpriteIdleAnimationSheet2.png" id="2_r3rdc"]
 [ext_resource type="PackedScene" uid="uid://16nga8t7ll6w" path="res://ui/pause_menu.tscn" id="3_giq45"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_h0o6p"]
@@ -58,20 +58,17 @@ _data = {
 }
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_rhrk8"]
-radius = 135.0
-height = 618.0
+radius = 55.0
+height = 208.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_6eq8l"]
+radius = 55.0
+height = 208.0
 
 [node name="Jessie" type="CharacterBody2D" groups=["player"]]
 collision_layer = 2
 collision_mask = 13
 script = ExtResource("1_73rc8")
-
-[node name="pauseMenu" parent="." instance=ExtResource("3_giq45")]
-visible = false
-offset_left = -468.0
-offset_top = -726.0
-offset_right = -468.0
-offset_bottom = -726.0
 
 [node name="Label" type="Label" parent="."]
 offset_left = -289.0
@@ -82,7 +79,7 @@ text = "Pontuação: 0"
 label_settings = SubResource("LabelSettings_h0o6p")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("3_bwfuo")
+texture = ExtResource("2_r3rdc")
 hframes = 17
 
 [node name="recover" type="Timer" parent="."]
@@ -95,9 +92,21 @@ libraries = {
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 49)
 shape = SubResource("CapsuleShape2D_rhrk8")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
+position = Vector2(0, -50)
+shape = SubResource("CapsuleShape2D_6eq8l")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(490, -187)
+
+[node name="pauseMenu" parent="." instance=ExtResource("3_giq45")]
+visible = false
+offset_left = -468.0
+offset_top = -726.0
+offset_right = -468.0
+offset_bottom = -726.0
 
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
