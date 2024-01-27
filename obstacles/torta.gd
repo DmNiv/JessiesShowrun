@@ -5,6 +5,7 @@ extends Node2D
 func _on_area_2d_body_entered(body):
 	$RigidBody2D/Sprite2D.visible = true
 	$RigidBody2D/Sprite2D2.visible = true
+	$RigidBody2D/Area2D2.set_deferred("monitoring", true)
 	$RigidBody2D.set_deferred("freeze", false)
 
 
