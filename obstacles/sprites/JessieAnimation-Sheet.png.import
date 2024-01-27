@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://jo6gu35rjeqf"
-path="res://.godot/imported/JessieSpriteIdleAnimationSheet2.png-991ea1c59777691d0a888f10f39759c6.ctex"
+uid="uid://cqg0sf3gjpowy"
+path="res://.godot/imported/JessieAnimation-Sheet.png-923273adaa23fc3879d2592029df2724.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://obstacles/sprites/JessieSpriteIdleAnimationSheet2.png"
-dest_files=["res://.godot/imported/JessieSpriteIdleAnimationSheet2.png-991ea1c59777691d0a888f10f39759c6.ctex"]
+source_file="res://obstacles/sprites/JessieAnimation-Sheet.png"
+dest_files=["res://.godot/imported/JessieAnimation-Sheet.png-923273adaa23fc3879d2592029df2724.ctex"]
 
 [params]
 

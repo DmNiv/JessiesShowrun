@@ -46,14 +46,14 @@ func _process(delta):
 	$Label.text = "Pontuação: " + str(pontuacao)
 	
 func animate():
-	if direction < 0:
-		$Sprite2D.flip_h = true
-	elif direction > 0:
-		$Sprite2D.flip_h = false
-	if direction == 0:
-		$AnimationPlayer.play("idle")
+	if direction != 0:
+		$AnimationPlayer.play("run")
+		if direction < 0:
+			$Sprite2D.flip_h = true
+		elif direction > 0:
+			$Sprite2D.flip_h = false
 	else:
-		$AnimationPlayer.play("RESET")
+		$AnimationPlayer.play("idle")
 
 func _physics_process(delta):
 	
