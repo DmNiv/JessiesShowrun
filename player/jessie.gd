@@ -58,7 +58,7 @@ func animate():
 			$Sprite2D.flip_h = true
 		elif direction > 0:
 			$Sprite2D.flip_h = false
-	elif sliding == true and velocity.x < 200:
+	elif sliding == true and velocity.x < 100 and velocity.y == 0 :
 		$AnimationPlayer.play("crouchIdle")
 	else:
 		$AnimationPlayer.play("idle")

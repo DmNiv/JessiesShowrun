@@ -259,9 +259,6 @@ position = Vector2(14256, 0)
 [node name="torta7" parent="." instance=ExtResource("4_d5662")]
 position = Vector2(16848, -432)
 
-[node name="Jessie" parent="." instance=ExtResource("2_0ypx0")]
-position = Vector2(14688, -216)
-
 [node name="banana9" parent="." instance=ExtResource("3_klfyv")]
 position = Vector2(15984, -648)
 
@@ -306,3 +303,6 @@ position = Vector2(21168, -540)
 
 [node name="nextLevel" parent="." instance=ExtResource("5_2o33x")]
 position = Vector2(24840, -756)
+
+[node name="Jessie" parent="." instance=ExtResource("2_0ypx0")]
+position = Vector2(108, -216)
