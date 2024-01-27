@@ -221,7 +221,7 @@ position = Vector2(19872, 324)
 position = Vector2(13284, -432)
 
 [node name="banana10" parent="." instance=ExtResource("3_bs5w3")]
-position = Vector2(16416, 0)
+position = Vector2(17064, 0)
 
 [node name="banana11" parent="." instance=ExtResource("3_bs5w3")]
 position = Vector2(6156, -648)

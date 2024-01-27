@@ -29,12 +29,12 @@ func slide():
 		velocity.x = -1000
 	$CollisionShape2D.scale.y = 0.5
 	$CollisionShape2D2.scale.y = 0.5
-
+	$CollisionShape2D2.position.y = 0
 func stand():
 	sliding = false
 	$CollisionShape2D.scale.y = 1
 	$CollisionShape2D2.scale.y = 1
-	
+	$CollisionShape2D2.position.y = -50
 func hitBanana():
 	pontuacao += 5
 	slowDown()
@@ -43,7 +43,8 @@ func hitPie():
 	slowDown()
 
 func _process(delta):
-	$Label.text = "Pontuação: " + str(pontuacao)
+	$Label.text = "Pontuação: " + str(pontuacao) + "\nVelocidade x, y: " + str(velocity)
+	
 	
 func animate():
 	if direction != 0:
@@ -67,6 +68,8 @@ func _physics_process(delta):
 
 	if Input.is_action_pressed("ui_accept") and is_on_floor():
 		velocity.y = JUMP_VELOCITY
+	elif Input.is_action_just_pressed("ui_accept") and not is_on_floor():
+		velocity.y = -10 
 
 	direction = Input.get_axis("ui_a", "ui_d")
 	if direction > 0 and sliding == false and slow == false:
@@ -77,6 +80,13 @@ func _physics_process(delta):
 		velocity.x = lerp(velocity.x, 0.0, 0.05)
 	if sliding == false:
 		velocity.x = clamp(velocity.x, -maxSpeed, maxSpeed)
+		
+	if sliding == true and velocity.y > 3000:
+		$CollisionShape2D.disabled = true
+		velocity.y = -300
+		velocity.x = 300 * direction
+		await get_tree().create_timer(0.2).timeout
+		$CollisionShape2D.disabled = false
 		
 	if Input.is_action_just_pressed("ui_esc"):
 		get_tree().paused = true
