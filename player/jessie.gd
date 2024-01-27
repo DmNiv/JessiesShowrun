@@ -68,8 +68,6 @@ func _physics_process(delta):
 
 	if Input.is_action_pressed("ui_accept") and is_on_floor():
 		velocity.y = JUMP_VELOCITY
-	elif Input.is_action_just_pressed("ui_accept") and not is_on_floor():
-		velocity.y = -10 
 
 	direction = Input.get_axis("ui_a", "ui_d")
 	if direction > 0 and sliding == false and slow == false:
