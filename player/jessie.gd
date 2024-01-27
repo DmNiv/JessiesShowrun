@@ -10,6 +10,7 @@ var sliding = false
 var direction
 var pontuacao = 0
 var slow = false
+var dash = 1
 
 
 func slowDown():
@@ -23,14 +24,18 @@ func slowDown():
 
 func slide():
 	sliding = true
-	if velocity.x > 700:
-		velocity.x = 1000
-	elif velocity.x < -700:
-		velocity.x = -1000
+	if dash == 1:
+		dash = 0
+		if velocity.x > 700:
+			velocity.x = 1000
+		elif velocity.x < -700:
+			velocity.x = -1000
 	$CollisionShape2D.scale.y = 0.5
 	$CollisionShape2D2.scale.y = 0.5
 	$CollisionShape2D2.position.y = 0
 func stand():
+	if dash == 0:
+		dash = 1
 	sliding = false
 	$CollisionShape2D.scale.y = 1
 	$CollisionShape2D2.scale.y = 1
@@ -53,6 +58,8 @@ func animate():
 			$Sprite2D.flip_h = true
 		elif direction > 0:
 			$Sprite2D.flip_h = false
+	elif sliding == true and velocity.x < 200:
+		$AnimationPlayer.play("crouchIdle")
 	else:
 		$AnimationPlayer.play("idle")
 
