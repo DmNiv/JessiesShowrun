@@ -3,7 +3,7 @@ extends CharacterBody2D
 
 const maxSpeed = 900.0
 const acceleration = 20
-const JUMP_VELOCITY = -600.0
+const JUMP_VELOCITY = -650.0
 
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 var sliding = false

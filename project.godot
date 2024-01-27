@@ -13,7 +13,7 @@ config_version=5
 config/name="JessiesShowrun"
 run/main_scene="res://ui/main_menu.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
-config/icon="res://obstacles/sprites/Icone 1x1.png"
+config/icon="res://obstacles/sprites/Icone 1080x1080.png"
 
 [display]
 

@@ -63,7 +63,7 @@ height = 208.0
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_6eq8l"]
 radius = 55.0
-height = 208.0
+height = 186.0
 
 [node name="Jessie" type="CharacterBody2D" groups=["player"]]
 collision_layer = 2
