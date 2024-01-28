@@ -52,19 +52,22 @@ func _process(delta):
 	
 	
 func animate():
-	if direction != 0:
+	if direction != 0 and is_on_floor():
 		$AnimationPlayer.play("run")
 		if direction < 0:
 			$Sprite2D.flip_h = true
 		elif direction > 0:
 			$Sprite2D.flip_h = false
-	elif sliding == true and velocity.x < 100:
+	if sliding == true and velocity.x < 100 and velocity.x > -100:
 		$AnimationPlayer.play("crouchIdle")
-	else:
+	if velocity.y < 0:
+		$AnimationPlayer.play("jump")
+	if velocity.y > 0 and sliding == false:
+		$AnimationPlayer.play("fall")
+	if velocity.x < 100 and velocity.x > -100 and is_on_floor() and sliding == false:
 		$AnimationPlayer.play("idle")
 
 func _physics_process(delta):
-	
 	if not is_on_floor():
 		velocity.y += gravity * delta
 		
@@ -103,6 +106,3 @@ func _physics_process(delta):
 
 
 
-
-func _on_animation_player_animation_finished(recover):
-	$Sprite2D.rotation = 0
