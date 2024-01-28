@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://d3a5mf4c6g06c"]
+[gd_scene load_steps=12 format=3 uid="uid://d3a5mf4c6g06c"]
 
 [ext_resource type="PackedScene" uid="uid://d12nmgwpp6l20" path="res://player/jessie.tscn" id="2_0ypx0"]
 [ext_resource type="Texture2D" uid="uid://dx0rji2bdrg4i" path="res://obstacles/sprites/Bloco de lado 108x108.png" id="2_m3bfq"]
@@ -6,6 +6,8 @@
 [ext_resource type="PackedScene" uid="uid://qx2hfiacjd18" path="res://obstacles/torta.tscn" id="4_d5662"]
 [ext_resource type="PackedScene" uid="uid://tvgx2dr72aq5" path="res://funcObjects/next_level.tscn" id="5_2o33x"]
 [ext_resource type="FontFile" uid="uid://bvk1adisg10yn" path="res://fonts/Carnevalee Freakshow.ttf" id="6_8xfmv"]
+[ext_resource type="PackedScene" uid="uid://c0nedyuru67ih" path="res://ui/presentation.tscn" id="7_lr6md"]
+[ext_resource type="PackedScene" uid="uid://b7cbv7x11ki2e" path="res://ui/continue_level.tscn" id="8_hdlca"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5lp1a"]
 texture = ExtResource("2_m3bfq")
@@ -322,3 +324,13 @@ position = Vector2(24840, -756)
 
 [node name="Jessie" parent="." instance=ExtResource("2_0ypx0")]
 position = Vector2(108, -216)
+
+[node name="presentation" parent="Jessie" instance=ExtResource("7_lr6md")]
+position = Vector2(-710, -862)
+
+[node name="continueLevel" parent="Jessie" instance=ExtResource("8_hdlca")]
+visible = false
+offset_left = -710.0
+offset_top = -862.0
+offset_right = -710.0
+offset_bottom = -862.0

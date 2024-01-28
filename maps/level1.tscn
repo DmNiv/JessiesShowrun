@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://dpiwbueqnhqal"]
+[gd_scene load_steps=13 format=3 uid="uid://dpiwbueqnhqal"]
 
 [ext_resource type="FontFile" uid="uid://bvk1adisg10yn" path="res://fonts/Carnevalee Freakshow.ttf" id="1_c2i8h"]
 [ext_resource type="Texture2D" uid="uid://dx0rji2bdrg4i" path="res://obstacles/sprites/Bloco de lado 108x108.png" id="1_is0a2"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://b4c8pmrccxkr" path="res://obstacles/banana.tscn" id="3_bs5w3"]
 [ext_resource type="PackedScene" uid="uid://tvgx2dr72aq5" path="res://funcObjects/next_level.tscn" id="4_8pqft"]
 [ext_resource type="PackedScene" uid="uid://c0nedyuru67ih" path="res://ui/presentation.tscn" id="6_hueqf"]
+[ext_resource type="PackedScene" uid="uid://b7cbv7x11ki2e" path="res://ui/continue_level.tscn" id="8_tfqfh"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_6ho6n"]
 font = ExtResource("1_c2i8h")
@@ -263,7 +264,15 @@ position = Vector2(8208, 0)
 position = Vector2(21276, 216)
 
 [node name="Jessie" parent="." instance=ExtResource("2_smduu")]
-position = Vector2(177, -312)
+position = Vector2(216, -216)
 
 [node name="presentation" parent="Jessie" instance=ExtResource("6_hueqf")]
 position = Vector2(-710, -862)
+
+[node name="continueLevel" parent="Jessie" instance=ExtResource("8_tfqfh")]
+unique_name_in_owner = true
+visible = false
+offset_left = -710.0
+offset_top = -862.0
+offset_right = -710.0
+offset_bottom = -862.0

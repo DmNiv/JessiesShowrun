@@ -1,0 +1,62 @@
+[gd_scene load_steps=5 format=3 uid="uid://csfsnlanyrv7g"]
+
+[ext_resource type="Script" path="res://credits.gd" id="1_53jco"]
+[ext_resource type="FontFile" uid="uid://bvk1adisg10yn" path="res://fonts/Carnevalee Freakshow.ttf" id="2_y6w2c"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_f1rgk"]
+font = ExtResource("2_y6w2c")
+font_size = 180
+font_color = Color(0.94902, 0.415686, 0.105882, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_v8hji"]
+font = ExtResource("2_y6w2c")
+font_size = 151
+font_color = Color(0.972549, 0.690196, 0.0156863, 1)
+
+[node name="level4" type="Control"]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_53jco")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(1200, 675)
+zoom = Vector2(0.8, 0.8)
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_right = 2401.0
+offset_bottom = 1353.0
+color = Color(0.423529, 0.0470588, 0.94902, 1)
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_right = 2401.0
+offset_bottom = 1353.0
+text = "Thank you for playing our game!!
+
+code: dm_niv
+arts: mugivamp"
+label_settings = SubResource("LabelSettings_f1rgk")
+horizontal_alignment = 1
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 741.0
+offset_top = 1016.0
+offset_right = 1667.0
+offset_bottom = 1197.0
+
+[node name="Label" type="Label" parent="Button"]
+layout_mode = 0
+offset_right = 926.0
+offset_bottom = 181.0
+text = "Quit"
+label_settings = SubResource("LabelSettings_v8hji")
+horizontal_alignment = 1
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

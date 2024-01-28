@@ -29,9 +29,9 @@ color = Color(0.933333, 0.635294, 0.937255, 0.690196)
 [node name="unpause" type="Button" parent="."]
 layout_mode = 0
 offset_left = 640.0
-offset_top = 503.0
+offset_top = 279.0
 offset_right = 1280.0
-offset_bottom = 656.0
+offset_bottom = 432.0
 
 [node name="Label" type="Label" parent="unpause"]
 layout_mode = 1
@@ -46,6 +46,29 @@ offset_right = 311.333
 offset_bottom = 125.375
 grow_horizontal = 2
 text = "RESUME"
+label_settings = SubResource("LabelSettings_a8hic")
+horizontal_alignment = 1
+
+[node name="retry" type="Button" parent="."]
+layout_mode = 0
+offset_left = 640.0
+offset_top = 494.0
+offset_right = 1280.0
+offset_bottom = 647.0
+
+[node name="Label" type="Label" parent="retry"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.513542
+anchor_top = 0.180556
+anchor_right = 0.513542
+anchor_bottom = 0.180556
+offset_left = -328.667
+offset_top = -27.625
+offset_right = 311.333
+offset_bottom = 125.375
+grow_horizontal = 2
+text = "RESTART"
 label_settings = SubResource("LabelSettings_a8hic")
 horizontal_alignment = 1
 
@@ -73,4 +96,5 @@ label_settings = SubResource("LabelSettings_a8hic")
 horizontal_alignment = 1
 
 [connection signal="pressed" from="unpause" to="." method="_on_unpause_pressed"]
+[connection signal="pressed" from="retry" to="." method="_on_retry_pressed"]
 [connection signal="pressed" from="quit" to="." method="_on_quit_pressed"]

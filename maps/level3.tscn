@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://d1ijhc8wsysbw"]
+[gd_scene load_steps=14 format=3 uid="uid://d1ijhc8wsysbw"]
 
 [ext_resource type="Texture2D" uid="uid://dx0rji2bdrg4i" path="res://obstacles/sprites/Bloco de lado 108x108.png" id="1_lk2ua"]
 [ext_resource type="PackedScene" uid="uid://d12nmgwpp6l20" path="res://player/jessie.tscn" id="2_qpcn2"]
@@ -8,6 +8,8 @@
 [ext_resource type="PackedScene" uid="uid://qx2hfiacjd18" path="res://obstacles/torta.tscn" id="4_ehgtl"]
 [ext_resource type="PackedScene" uid="uid://tvgx2dr72aq5" path="res://funcObjects/next_level.tscn" id="7_os32m"]
 [ext_resource type="FontFile" uid="uid://bvk1adisg10yn" path="res://fonts/Carnevalee Freakshow.ttf" id="8_aexab"]
+[ext_resource type="PackedScene" uid="uid://c0nedyuru67ih" path="res://ui/presentation.tscn" id="9_uefk8"]
+[ext_resource type="PackedScene" uid="uid://b7cbv7x11ki2e" path="res://ui/continue_level.tscn" id="10_bv67c"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_oib8a"]
 texture = ExtResource("1_lk2ua")
@@ -359,9 +361,6 @@ position = Vector2(18252, 2376)
 [node name="nextLevel" parent="." instance=ExtResource("7_os32m")]
 position = Vector2(22896, 3132)
 
-[node name="Jessie" parent="." instance=ExtResource("2_qpcn2")]
-position = Vector2(108, -216)
-
 [node name="Label" type="Label" parent="."]
 offset_left = 324.0
 offset_top = -540.0
@@ -371,3 +370,16 @@ text = "Make them laugh!!"
 label_settings = SubResource("LabelSettings_qkuio")
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="Jessie" parent="." instance=ExtResource("2_qpcn2")]
+position = Vector2(108, -216)
+
+[node name="presentation" parent="Jessie" instance=ExtResource("9_uefk8")]
+position = Vector2(-710, -862)
+
+[node name="continueLevel" parent="Jessie" instance=ExtResource("10_bv67c")]
+visible = false
+offset_left = -710.0
+offset_top = -862.0
+offset_right = -710.0
+offset_bottom = -862.0
