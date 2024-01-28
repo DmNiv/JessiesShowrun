@@ -1,0 +1,59 @@
+[gd_scene load_steps=5 format=3 uid="uid://d2uv57v45b181"]
+
+[ext_resource type="FontFile" uid="uid://bvk1adisg10yn" path="res://fonts/Carnevalee Freakshow.ttf" id="1_8nexl"]
+[ext_resource type="Script" path="res://ui/instructions.gd" id="1_b4jsi"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_xvdpi"]
+line_spacing = 20.0
+font = ExtResource("1_8nexl")
+font_size = 90
+font_color = Color(0.972549, 0.690196, 0.0156863, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_w0sy5"]
+font = ExtResource("1_8nexl")
+font_size = 126
+font_color = Color(0.972549, 0.690196, 0.0156863, 1)
+
+[node name="instructions" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_b4jsi")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+color = Color(0.407843, 0.160784, 0.65098, 1)
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+text = "This game doesn't have a defined objective.
+You get points for getting hit by obstacles as it makes
+the audience laugh, but you are also racing against time.
+So you can speedrun however you want.
+Have fun ;)"
+label_settings = SubResource("LabelSettings_xvdpi")
+horizontal_alignment = 1
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 703.0
+offset_top = 723.0
+offset_right = 1225.0
+offset_bottom = 897.0
+
+[node name="Label" type="Label" parent="Button"]
+layout_mode = 0
+offset_right = 522.0
+offset_bottom = 174.0
+text = "Play"
+label_settings = SubResource("LabelSettings_w0sy5")
+horizontal_alignment = 1
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

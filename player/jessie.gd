@@ -48,16 +48,16 @@ func hitPie():
 	slowDown()
 
 func _process(delta):
-	$Label.text = "Pontuação: " + str(pontuacao) + "\nVelocidade x, y: " + str(velocity)
+	$Label.text = "Points: " + str(pontuacao)
 	
 	
 func animate():
 	if direction != 0 and is_on_floor():
 		$AnimationPlayer.play("run")
-		if direction < 0:
-			$Sprite2D.flip_h = true
-		elif direction > 0:
-			$Sprite2D.flip_h = false
+	if direction < 0:
+		$Sprite2D.flip_h = true
+	elif direction > 0:
+		$Sprite2D.flip_h = false
 	if sliding == true and velocity.x < 100 and velocity.x > -100:
 		$AnimationPlayer.play("crouchIdle")
 	if velocity.y < 0:
@@ -68,6 +68,8 @@ func animate():
 		$AnimationPlayer.play("idle")
 
 func _physics_process(delta):
+	$Label2.text = "miliseconds: " + str(Time.get_ticks_msec())
+	
 	if not is_on_floor():
 		velocity.y += gravity * delta
 		

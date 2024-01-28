@@ -1,0 +1,111 @@
+[gd_scene load_steps=7 format=3 uid="uid://c0nedyuru67ih"]
+
+[ext_resource type="Script" path="res://Node2D.gd" id="1_vgjdg"]
+[ext_resource type="FontFile" uid="uid://bvk1adisg10yn" path="res://fonts/Carnevalee Freakshow.ttf" id="2_18dje"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_dtp5n"]
+font = ExtResource("2_18dje")
+font_size = 176
+
+[sub_resource type="Animation" id="Animation_eiayc"]
+resource_name = "level"
+length = 2.0
+step = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Node2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.6, 0.8, 2),
+"transitions": PackedFloat32Array(1, 0.5, 1, 2, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(-300, 0), Vector2(-700, 0), Vector2(-700, 0), Vector2(-3186, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Node2D/ColorRect2:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(1, 2, 2.0001),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(2669.89, -222), Vector2(2795.56, -222), Vector2(2795.56, -222)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("ColorRect3:size")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1.2, 1.4, 1.6, 1.8, 1.8001, 2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(2400, 1350), Vector2(1313, 1398), Vector2(1052, 1386), Vector2(753, 1362), Vector2(309, 1080), Vector2(0, 1080), Vector2(0, 1350)]
+}
+
+[sub_resource type="Animation" id="Animation_dojg1"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Node2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_pfx2i"]
+_data = {
+"RESET": SubResource("Animation_dojg1"),
+"level": SubResource("Animation_eiayc")
+}
+
+[node name="presentation" type="Node2D"]
+process_mode = 2
+script = ExtResource("1_vgjdg")
+
+[node name="ColorRect3" type="ColorRect" parent="."]
+offset_right = 2400.0
+offset_bottom = 1350.0
+color = Color(0.94902, 0.152941, 0.298039, 1)
+
+[node name="Node2D" type="Node2D" parent="."]
+
+[node name="ColorRect2" type="ColorRect" parent="Node2D"]
+offset_left = 2669.89
+offset_top = -222.0
+offset_right = 3053.89
+offset_bottom = 1398.0
+rotation = 0.261799
+color = Color(0.972549, 0.690196, 0.0156863, 1)
+
+[node name="ColorRect" type="ColorRect" parent="Node2D"]
+offset_left = 2289.29
+offset_top = -257.0
+offset_right = 2807.29
+offset_bottom = 1363.0
+rotation = 0.261799
+color = Color(0.94902, 0.415686, 0.105882, 1)
+
+[node name="Label" type="Label" parent="Node2D"]
+offset_left = 2137.29
+offset_top = 404.0
+offset_right = 2553.29
+offset_bottom = 602.0
+label_settings = SubResource("LabelSettings_dtp5n")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_pfx2i")
+}
+
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]

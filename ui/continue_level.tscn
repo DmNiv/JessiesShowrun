@@ -1,0 +1,88 @@
+[gd_scene load_steps=5 format=3 uid="uid://b7cbv7x11ki2e"]
+
+[ext_resource type="Script" path="res://Control.gd" id="1_cqip5"]
+[ext_resource type="FontFile" uid="uid://bvk1adisg10yn" path="res://fonts/Carnevalee Freakshow.ttf" id="2_2gud8"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_rq7js"]
+font = ExtResource("2_2gud8")
+font_size = 108
+font_color = Color(0.92549, 1, 0.72549, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_ed1xy"]
+font = ExtResource("2_2gud8")
+font_size = 151
+font_color = Color(0.92549, 1, 0.72549, 1)
+
+[node name="continueLevel" type="Control"]
+process_mode = 2
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_cqip5")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_left = 498.0
+offset_top = 133.0
+offset_right = 1422.0
+offset_bottom = 947.0
+color = Color(0.933333, 0.635294, 0.937255, 0.690196)
+
+[node name="yeeaaah" type="Button" parent="."]
+offset_left = 640.0
+offset_top = 503.0
+offset_right = 1280.0
+offset_bottom = 656.0
+
+[node name="Label" type="Label" parent="yeeaaah"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.513542
+anchor_top = 0.180556
+anchor_right = 0.513542
+anchor_bottom = 0.180556
+offset_left = -328.667
+offset_top = -27.625
+offset_right = 311.333
+offset_bottom = 125.375
+grow_horizontal = 2
+text = "Yeeaaah!!"
+label_settings = SubResource("LabelSettings_rq7js")
+horizontal_alignment = 1
+
+[node name="quit" type="Button" parent="."]
+offset_left = 640.0
+offset_top = 699.0
+offset_right = 1280.0
+offset_bottom = 852.0
+
+[node name="Label" type="Label" parent="quit"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.513542
+anchor_top = 0.180556
+anchor_right = 0.513542
+anchor_bottom = 0.180556
+offset_left = -328.667
+offset_top = -27.625
+offset_right = 311.333
+offset_bottom = 125.375
+grow_horizontal = 2
+text = "Quit"
+label_settings = SubResource("LabelSettings_rq7js")
+horizontal_alignment = 1
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 640.0
+offset_top = 229.0
+offset_right = 1280.0
+offset_bottom = 394.0
+text = "Next Level?"
+label_settings = SubResource("LabelSettings_ed1xy")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="pressed" from="yeeaaah" to="." method="_on_yeeaaah_pressed"]
