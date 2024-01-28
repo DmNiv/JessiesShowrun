@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://b7cbv7x11ki2e"]
+[gd_scene load_steps=6 format=3 uid="uid://b7cbv7x11ki2e"]
 
 [ext_resource type="Script" path="res://Control.gd" id="1_cqip5"]
 [ext_resource type="FontFile" uid="uid://bvk1adisg10yn" path="res://fonts/Carnevalee Freakshow.ttf" id="2_2gud8"]
+[ext_resource type="Texture2D" uid="uid://qjx70uxpi5mk" path="res://obstacles/sprites/Jessie no canhão 1080x1080.png" id="2_3x0gc"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_rq7js"]
 font = ExtResource("2_2gud8")
@@ -23,7 +24,13 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_cqip5")
 
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(1722, 672)
+scale = Vector2(1.15926, 1.15926)
+texture = ExtResource("2_3x0gc")
+
 [node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
 offset_left = 739.0
 offset_top = 338.0
 offset_right = 1663.0
@@ -31,10 +38,11 @@ offset_bottom = 1152.0
 color = Color(0.933333, 0.635294, 0.937255, 0.690196)
 
 [node name="yeeaaah" type="Button" parent="."]
+layout_mode = 0
 offset_left = 881.0
-offset_top = 708.0
+offset_top = 535.0
 offset_right = 1521.0
-offset_bottom = 861.0
+offset_bottom = 688.0
 
 [node name="Label" type="Label" parent="yeeaaah"]
 layout_mode = 1
@@ -52,7 +60,31 @@ text = "Yeeaaah!!"
 label_settings = SubResource("LabelSettings_rq7js")
 horizontal_alignment = 1
 
+[node name="retry" type="Button" parent="."]
+layout_mode = 0
+offset_left = 881.0
+offset_top = 718.0
+offset_right = 1521.0
+offset_bottom = 871.0
+
+[node name="Label" type="Label" parent="retry"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.513542
+anchor_top = 0.180556
+anchor_right = 0.513542
+anchor_bottom = 0.180556
+offset_left = -328.667
+offset_top = -27.625
+offset_right = 311.333
+offset_bottom = 125.375
+grow_horizontal = 2
+text = "Retry"
+label_settings = SubResource("LabelSettings_rq7js")
+horizontal_alignment = 1
+
 [node name="quit" type="Button" parent="."]
+layout_mode = 0
 offset_left = 881.0
 offset_top = 904.0
 offset_right = 1521.0
@@ -77,13 +109,14 @@ horizontal_alignment = 1
 [node name="Label" type="Label" parent="."]
 layout_mode = 0
 offset_left = 881.0
-offset_top = 434.0
+offset_top = 338.0
 offset_right = 1521.0
-offset_bottom = 603.0
+offset_bottom = 507.0
 text = "Next Level?"
 label_settings = SubResource("LabelSettings_ed1xy")
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [connection signal="pressed" from="yeeaaah" to="." method="_on_yeeaaah_pressed"]
+[connection signal="pressed" from="retry" to="." method="_on_retry_pressed"]
 [connection signal="pressed" from="quit" to="." method="_on_quit_pressed"]

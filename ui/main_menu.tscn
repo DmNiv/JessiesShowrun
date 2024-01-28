@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://chh31a3wgu60u"]
+[gd_scene load_steps=5 format=3 uid="uid://chh31a3wgu60u"]
 
 [ext_resource type="Script" path="res://ui/main_menu.gd" id="1_0kv8c"]
 [ext_resource type="FontFile" uid="uid://bvk1adisg10yn" path="res://fonts/Carnevalee Freakshow.ttf" id="2_m6wjy"]
+[ext_resource type="Texture2D" uid="uid://cje7ddvb70esi" path="res://obstacles/sprites/Icone 1080x1080.png" id="2_rok82"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_nr1co"]
 font = ExtResource("2_m6wjy")
@@ -27,12 +28,16 @@ offset_right = 1920.0
 offset_bottom = 1080.0
 color = Color(0.407843, 0.160784, 0.65098, 1)
 
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(540, 540)
+texture = ExtResource("2_rok82")
+
 [node name="startButton" type="Button" parent="."]
 layout_mode = 0
-offset_left = 556.0
-offset_top = 323.0
-offset_right = 1324.0
-offset_bottom = 579.0
+offset_left = 1080.0
+offset_top = 193.0
+offset_right = 1848.0
+offset_bottom = 449.0
 
 [node name="Label" type="Label" parent="startButton"]
 layout_mode = 0
@@ -45,10 +50,10 @@ uppercase = true
 
 [node name="quitButton" type="Button" parent="."]
 layout_mode = 0
-offset_left = 556.0
-offset_top = 740.0
-offset_right = 1324.0
-offset_bottom = 999.0
+offset_left = 1080.0
+offset_top = 610.0
+offset_right = 1848.0
+offset_bottom = 869.0
 
 [node name="Label2" type="Label" parent="quitButton"]
 layout_mode = 0
