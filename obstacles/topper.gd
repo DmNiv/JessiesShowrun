@@ -10,5 +10,6 @@ func _ready():
 
 
 func _on_area_2d_body_entered(body):
+	body.hitTopper()
 	body.get_node("Camera2D").add_child(bunnies.instantiate())
 	queue_free()

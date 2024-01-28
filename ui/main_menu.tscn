@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://chh31a3wgu60u"]
+[gd_scene load_steps=6 format=3 uid="uid://chh31a3wgu60u"]
 
 [ext_resource type="Script" path="res://ui/main_menu.gd" id="1_0kv8c"]
 [ext_resource type="FontFile" uid="uid://bvk1adisg10yn" path="res://fonts/Carnevalee Freakshow.ttf" id="2_m6wjy"]
@@ -12,6 +12,14 @@ outline_size = 10
 outline_color = Color(0, 0, 0, 1)
 shadow_size = 21
 shadow_color = Color(0, 0, 0, 0.388235)
+
+[sub_resource type="LabelSettings" id="LabelSettings_rurwe"]
+line_spacing = -32.0
+font = ExtResource("2_m6wjy")
+font_size = 191
+font_color = Color(0.972549, 0.690196, 0.0156863, 1)
+outline_size = 15
+outline_color = Color(0, 0, 0, 1)
 
 [node name="mainMenu" type="Control"]
 layout_mode = 3
@@ -35,9 +43,9 @@ texture = ExtResource("2_rok82")
 [node name="startButton" type="Button" parent="."]
 layout_mode = 0
 offset_left = 1080.0
-offset_top = 193.0
+offset_top = 448.0
 offset_right = 1848.0
-offset_bottom = 449.0
+offset_bottom = 704.0
 
 [node name="Label" type="Label" parent="startButton"]
 layout_mode = 0
@@ -51,9 +59,9 @@ uppercase = true
 [node name="quitButton" type="Button" parent="."]
 layout_mode = 0
 offset_left = 1080.0
-offset_top = 610.0
+offset_top = 749.0
 offset_right = 1848.0
-offset_bottom = 869.0
+offset_bottom = 1008.0
 
 [node name="Label2" type="Label" parent="quitButton"]
 layout_mode = 0
@@ -63,6 +71,17 @@ text = "QUIT"
 label_settings = SubResource("LabelSettings_nr1co")
 horizontal_alignment = 1
 uppercase = true
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 1080.0
+offset_top = 38.0
+offset_right = 1848.0
+offset_bottom = 448.0
+text = "Jessie's
+Showrun!!"
+label_settings = SubResource("LabelSettings_rurwe")
+horizontal_alignment = 1
 
 [connection signal="pressed" from="startButton" to="." method="_on_start_button_pressed"]
 [connection signal="pressed" from="quitButton" to="." method="_on_quit_button_pressed"]

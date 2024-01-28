@@ -50,6 +50,8 @@ func hitBanana():
 func hitPie():
 	pontuacao += 3
 	slowDown()
+func hitTopper():
+	pontuacao += 2
 
 func _process(delta):
 	$Label.text = "Points: " + str(pontuacao)

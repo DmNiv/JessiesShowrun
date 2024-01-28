@@ -13,15 +13,14 @@ config_version=5
 config/name="JessiesShowrun"
 run/main_scene="res://ui/main_menu.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
-config/icon="res://obstacles/sprites/Icone 1080x1080.png"
+config/icon="res://obstacles/sprites/Icone 256x256.png"
 
 [display]
 
 window/size/viewport_width=1920
 window/size/viewport_height=1080
+window/size/mode=3
 window/size/resizable=false
-window/size/window_width_override=1080
-window/size/window_height_override=720
 window/stretch/mode="canvas_items"
 window/stretch/aspect="expand"
 
