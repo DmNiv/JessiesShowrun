@@ -5,7 +5,7 @@
 
 [sub_resource type="LabelSettings" id="LabelSettings_f1rgk"]
 font = ExtResource("2_y6w2c")
-font_size = 180
+font_size = 120
 font_color = Color(0.94902, 0.415686, 0.105882, 1)
 
 [sub_resource type="LabelSettings" id="LabelSettings_v8hji"]
@@ -37,10 +37,7 @@ color = Color(0.423529, 0.0470588, 0.94902, 1)
 layout_mode = 0
 offset_right = 2401.0
 offset_bottom = 1353.0
-text = "Thank you for playing our game!!
-
-code: dm_niv
-arts: mugivamp"
+text = "Thank you for playing our game!!"
 label_settings = SubResource("LabelSettings_f1rgk")
 horizontal_alignment = 1
 
@@ -58,5 +55,10 @@ offset_bottom = 181.0
 text = "Quit"
 label_settings = SubResource("LabelSettings_v8hji")
 horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

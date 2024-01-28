@@ -276,9 +276,3 @@ offset_left = -710.0
 offset_top = -862.0
 offset_right = -710.0
 offset_bottom = -862.0
-
-[node name="nextLevel2" parent="." instance=ExtResource("4_8pqft")]
-position = Vector2(8500, 609)
-
-[node name="nextLevel3" parent="." instance=ExtResource("4_8pqft")]
-position = Vector2(2243, -314)

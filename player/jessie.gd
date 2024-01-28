@@ -68,7 +68,7 @@ func animate():
 		$AnimationPlayer.play("idle")
 
 func _physics_process(delta):
-	$Label2.text = "miliseconds: " + str(Time.get_ticks_msec())
+	$Label2.text = "milliseconds: " + str(Time.get_ticks_msec())
 	
 	if not is_on_floor():
 		velocity.y += gravity * delta
