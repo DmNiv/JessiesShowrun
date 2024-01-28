@@ -11,6 +11,7 @@ var direction
 var pontuacao = 0
 var slow = false
 var dash = 1
+var slides = 1
 
 
 func slowDown():
@@ -23,6 +24,7 @@ func slowDown():
 	
 
 func slide():
+	
 	sliding = true
 	if dash == 1:
 		dash = 0
@@ -34,6 +36,8 @@ func slide():
 	$CollisionShape2D2.scale.y = 0.5
 	$CollisionShape2D2.position.y = 0
 func stand():
+	if slides == 0:
+		slides = 1
 	if dash == 0:
 		dash = 1
 	sliding = false
@@ -52,18 +56,26 @@ func _process(delta):
 	
 	
 func animate():
-	if direction != 0 and is_on_floor():
+	if direction != 0 and is_on_floor() and sliding == false:
 		$AnimationPlayer.play("run")
 	if direction < 0:
 		$Sprite2D.flip_h = true
 	elif direction > 0:
 		$Sprite2D.flip_h = false
-	if sliding == true and velocity.x < 100 and velocity.x > -100:
-		$AnimationPlayer.play("crouchIdle")
-	if velocity.y < 0:
+	if velocity.y < 0 and sliding == false:
 		$AnimationPlayer.play("jump")
 	if velocity.y > 0 and sliding == false:
 		$AnimationPlayer.play("fall")
+	if sliding == true:
+		if velocity.x < 100 and velocity.x > -100:
+			$AnimationPlayer.play("crouchIdle")
+		elif velocity.x > 100 or velocity.x < -100:
+			if slides == 1:
+				if direction == 1:
+					$AnimationPlayer.play("slide")
+				if direction == -1:
+					$AnimationPlayer.play("slideLeft")
+				slides = 0
 	if velocity.x < 100 and velocity.x > -100 and is_on_floor() and sliding == false:
 		$AnimationPlayer.play("idle")
 
